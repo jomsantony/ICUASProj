@@ -54,4 +54,14 @@ public class DbBean1 {
    int r = s.executeUpdate(sql);
    return (r == 0) ? 0 : r; 
   } 
+  
+  public static java.util.Date getCurrentDateWithoutMilliseconds() {
+		//Parse date to remove milliseconds
+		Calendar c = Calendar.getInstance();
+	    c.set(Calendar.MILLISECOND, 0); // set milliseconds to 0
+	    return new java.util.Date(c.getTimeInMillis());
+	}
+  
+  
+  
 } 
